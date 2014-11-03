@@ -1,0 +1,21 @@
+---
+name: Dropbox uploader
+description: |
+  Uploads directory to [Dropbox](https://dropbox.com/).
+  You have to **authenticate [our application]()** and add the received tokens below.
+
+  On the WebHook integration's page check the *Setup Instructions*
+  and copy the URL from the cURL example.
+  The Webhook URL should look like this:
+  **https://YOURTEAMNAME.slack.com/services/hooks/WEBHOOKNAME?token=HOOKTOKEN**
+website: https://github.com/bitrise-io/steps-slack-message
+source:
+  git: https://github.com/bitrise-io/steps-slack-message.git
+host_os_tags:
+  - osx-10.9
+type_tags:
+  - IM
+  - notification
+requires_admin_user: false
+
+inputs:
