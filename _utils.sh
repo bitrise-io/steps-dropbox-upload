@@ -36,6 +36,9 @@ function print_and_do_command_exit_on_error {
 	print_and_do_command $@
 	if [ $? -ne 0 ]; then
 		echo " [!] Failed!"
+		if [ "$(type -t ${CLEANUP_ON_ERROR_FN})" == "function" ] ; then
+			CLEANUP_ON_ERROR_FN
+		fi
 		exit 1
 	fi
 }

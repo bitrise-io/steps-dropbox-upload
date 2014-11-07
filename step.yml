@@ -1,8 +1,55 @@
 ---
 name: Dropbox uploader
 description: |
+  ## Important note:
+
+  This Step requires quite a good amount of setup
+  and is marked for future revision to make it easier to work with.
+
+  ## Description:
+
   Uploads directory to [Dropbox](https://dropbox.com/).
   You have to **authenticate your application** and add the received tokens below.
+
+  ## Setup instructions:
+
+  You can register a Dropbox App [here](https://www.dropbox.com/developers/apps/create).
+
+  1. Select the API app option
+  2. Files and datastores
+  3. Can your app be limited to its own folder? : Yes or No, choose the one which suites you better.
+
+  To get the required tokens you should git clone this repository,
+  open the Terminal and cd into the folder which contains this file
+  then run `$ bash dropbox_uploader.sh`.
+
+  The script will present a detailed step-by-step guide
+  you'll have to follow in order to generate the required
+  API keys and tokens.
+
+  It will prompt you to enter your Dropbox App's app keys
+  which you can get on the *Settings* page of your app
+  you registered on the [Dropbox Developer site](https://www.dropbox.com/developers/apps).
+
+  The *dropbox_uploader.sh* script will present you an authentication URL,
+  you have to open this URL in your browser and click **Allow**
+  to grant access.
+
+  Once you're finished with the *dropbox_uploader.sh* script
+  you can get all the required keys and tokens
+  from the configuration file it generates at *~/.dropbox_uploader*.
+
+  To print the content of the configuration file
+  enter this command into your Terminal: `$ cat ~/.dropbox_uploader`.
+
+  ## Note about permissions
+
+  > One thing to notice is that if you choose "App permission",
+  > your uploads will end up on Dropbox under an App/<your_app_name> folder.
+  > To have them stored in another folder, such as in /dir/,
+  > you'll need to give Dropbox-Uploader permission to all Dropbox files.
+
+  You can find more information at [Dropbox-Uploader](https://github.com/andreafabrizi/Dropbox-Uploader).
 website: https://github.com/bitrise-io/steps-dropbox-upload
 source:
   git: https://github.com/bitrise-io/steps-dropbox-upload.git
@@ -18,18 +65,28 @@ inputs:
   - title: |
       App Key
     mapped_to: APPKEY
+    is_expand: false
   - title: |
       App Secret
     mapped_to: APPSECRET
+    is_expand: false
   - title: |
-      Access Level
+      Access Level: sandbox or dropbox
     mapped_to: ACCESS_LEVEL
+    is_expand: false
   - title: |
       OAuth access token
     mapped_to: OAUTH_ACCESS_TOKEN
+    is_expand: false
   - title: |
-      Dir to upload
-    mapped_to: DIRECTORY_TO_UPLOAD
+      OAuth access token secret
+    mapped_to: OAUTH_ACCESS_TOKEN_SECRET
+    is_expand: false
   - title: |
-      Path in Dropbox
-    mapped_to: UPLOAD_PATH
+      Local path to upload
+    mapped_to: PATH_TO_UPLOAD
+    is_expand: true
+  - title: |
+      Path on Dropbox
+    mapped_to: UPLOAD_PATH_ON_DROPBOX
+    is_expand: true
