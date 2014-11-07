@@ -58,13 +58,13 @@ if [ -z "${UPLOAD_PATH_ON_DROPBOX}" ] ; then
 fi
 
 write_section_to_formatted_output "# Configuration"
-echo_string_to_formatted_output "* APPKEY: ${APPKEY}"
-echo_string_to_formatted_output "* APPSECRET: ${APPSECRET}"
-echo_string_to_formatted_output "* ACCESS_LEVEL: ${ACCESS_LEVEL}"
-echo_string_to_formatted_output "* OAUTH_ACCESS_TOKEN: ${OAUTH_ACCESS_TOKEN}"
-echo_string_to_formatted_output "* OAUTH_ACCESS_TOKEN_SECRET: ${OAUTH_ACCESS_TOKEN_SECRET}"
-echo_string_to_formatted_output "* PATH_TO_UPLOAD: ${PATH_TO_UPLOAD}"
-echo_string_to_formatted_output "* UPLOAD_PATH_ON_DROPBOX: ${UPLOAD_PATH_ON_DROPBOX}"
+echo_string_to_formatted_output "* APPKEY: *${APPKEY}*"
+echo_string_to_formatted_output "* APPSECRET: *${APPSECRET}*"
+echo_string_to_formatted_output "* ACCESS_LEVEL: *${ACCESS_LEVEL}*"
+echo_string_to_formatted_output "* OAUTH_ACCESS_TOKEN: *${OAUTH_ACCESS_TOKEN}*"
+echo_string_to_formatted_output "* OAUTH_ACCESS_TOKEN_SECRET: *${OAUTH_ACCESS_TOKEN_SECRET}*"
+echo_string_to_formatted_output "* PATH_TO_UPLOAD: *${PATH_TO_UPLOAD}*"
+echo_string_to_formatted_output "* UPLOAD_PATH_ON_DROPBOX: *${UPLOAD_PATH_ON_DROPBOX}*"
 
 
 #

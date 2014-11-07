@@ -71,7 +71,7 @@ inputs:
     mapped_to: APPSECRET
     is_expand: false
   - title: |
-      Access Level: sandbox or dropbox
+      Access Level: sandbox or dropbox. Sandbox is more secure, it only allows upload to the App's folder.
     mapped_to: ACCESS_LEVEL
     is_expand: false
   - title: |
